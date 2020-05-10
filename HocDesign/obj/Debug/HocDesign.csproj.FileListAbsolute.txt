@@ -1,0 +1,12 @@
+C:\taiLieu\BTLCShrap\HocDesign\bin\Debug\HocDesign.exe.config
+C:\taiLieu\BTLCShrap\HocDesign\bin\Debug\HocDesign.exe
+C:\taiLieu\BTLCShrap\HocDesign\bin\Debug\HocDesign.pdb
+C:\taiLieu\BTLCShrap\HocDesign\bin\Debug\FontAwesome.Sharp.dll
+C:\taiLieu\BTLCShrap\HocDesign\obj\Debug\HocDesign.csprojAssemblyReference.cache
+C:\taiLieu\BTLCShrap\HocDesign\obj\Debug\HocDesign.Form1.resources
+C:\taiLieu\BTLCShrap\HocDesign\obj\Debug\HocDesign.Properties.Resources.resources
+C:\taiLieu\BTLCShrap\HocDesign\obj\Debug\HocDesign.csproj.GenerateResource.cache
+C:\taiLieu\BTLCShrap\HocDesign\obj\Debug\HocDesign.csproj.CoreCompileInputs.cache
+C:\taiLieu\BTLCShrap\HocDesign\obj\Debug\HocDesign.csproj.CopyComplete
+C:\taiLieu\BTLCShrap\HocDesign\obj\Debug\HocDesign.exe
+C:\taiLieu\BTLCShrap\HocDesign\obj\Debug\HocDesign.pdb

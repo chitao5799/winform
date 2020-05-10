@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTL", "BTL\BTL.csproj", "{10CF3ACD-1EDD-49F0-8E4F-B42D18E16952}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HocDesign", "HocDesign\HocDesign.csproj", "{C3269E7C-AEF1-42D4-88F2-D3E6AA6E54B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10CF3ACD-1EDD-49F0-8E4F-B42D18E16952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10CF3ACD-1EDD-49F0-8E4F-B42D18E16952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10CF3ACD-1EDD-49F0-8E4F-B42D18E16952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10CF3ACD-1EDD-49F0-8E4F-B42D18E16952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3269E7C-AEF1-42D4-88F2-D3E6AA6E54B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3269E7C-AEF1-42D4-88F2-D3E6AA6E54B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3269E7C-AEF1-42D4-88F2-D3E6AA6E54B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3269E7C-AEF1-42D4-88F2-D3E6AA6E54B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3F3AC76-F0A2-4D97-8FBE-20D140AB4C15}
+	EndGlobalSection
+EndGlobal

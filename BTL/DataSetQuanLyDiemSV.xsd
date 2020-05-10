@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetQuanLyDiemSV" targetNamespace="http://tempuri.org/DataSetQuanLyDiemSV.xsd" xmlns:mstns="http://tempuri.org/DataSetQuanLyDiemSV.xsd" xmlns="http://tempuri.org/DataSetQuanLyDiemSV.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetQuanLyDiemSV" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetQuanLyDiemSV" msprop:Generator_UserDSName="DataSetQuanLyDiemSV">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSDiemSVLopHC" msprop:Generator_TableClassName="DSDiemSVLopHCDataTable" msprop:Generator_TableVarName="tableDSDiemSVLopHC" msprop:Generator_TablePropName="DSDiemSVLopHC" msprop:Generator_RowDeletingName="DSDiemSVLopHCRowDeleting" msprop:Generator_RowChangingName="DSDiemSVLopHCRowChanging" msprop:Generator_RowEvHandlerName="DSDiemSVLopHCRowChangeEventHandler" msprop:Generator_RowDeletedName="DSDiemSVLopHCRowDeleted" msprop:Generator_UserTableName="DSDiemSVLopHC" msprop:Generator_RowChangedName="DSDiemSVLopHCRowChanged" msprop:Generator_RowEvArgName="DSDiemSVLopHCRowChangeEvent" msprop:Generator_RowClassName="DSDiemSVLopHCRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="maSV" msprop:Generator_ColumnVarNameInTable="columnmaSV" msprop:Generator_ColumnPropNameInRow="maSV" msprop:Generator_ColumnPropNameInTable="maSVColumn" msprop:Generator_UserColumnName="maSV" type="xs:string" minOccurs="0" />
+              <xs:element name="tenSV" msprop:Generator_ColumnVarNameInTable="columntenSV" msprop:Generator_ColumnPropNameInRow="tenSV" msprop:Generator_ColumnPropNameInTable="tenSVColumn" msprop:Generator_UserColumnName="tenSV" type="xs:string" minOccurs="0" />
+              <xs:element name="ngaySinh" msprop:Generator_ColumnVarNameInTable="columnngaySinh" msprop:Generator_ColumnPropNameInRow="ngaySinh" msprop:Generator_ColumnPropNameInTable="ngaySinhColumn" msprop:Generator_UserColumnName="ngaySinh" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="gioiTinh" msprop:Generator_ColumnVarNameInTable="columngioiTinh" msprop:Generator_ColumnPropNameInRow="gioiTinh" msprop:Generator_ColumnPropNameInTable="gioiTinhColumn" msprop:Generator_UserColumnName="gioiTinh" type="xs:string" minOccurs="0" />
+              <xs:element name="diemTB" msprop:Generator_ColumnVarNameInTable="columndiemTB" msprop:Generator_ColumnPropNameInRow="diemTB" msprop:Generator_ColumnPropNameInTable="diemTBColumn" msprop:Generator_UserColumnName="diemTB" type="xs:double" minOccurs="0" />
+              <xs:element name="tongSoTC" msprop:Generator_ColumnVarNameInTable="columntongSoTC" msprop:Generator_ColumnPropNameInRow="tongSoTC" msprop:Generator_ColumnPropNameInTable="tongSoTCColumn" msprop:Generator_UserColumnName="tongSoTC" type="xs:int" minOccurs="0" />
+              <xs:element name="soTCNo" msprop:Generator_ColumnVarNameInTable="columnsoTCNo" msprop:Generator_ColumnPropNameInRow="soTCNo" msprop:Generator_ColumnPropNameInTable="soTCNoColumn" msprop:Generator_UserColumnName="soTCNo" type="xs:int" minOccurs="0" />
+              <xs:element name="xepLoai" msprop:Generator_ColumnVarNameInTable="columnxepLoai" msprop:Generator_ColumnPropNameInRow="xepLoai" msprop:Generator_ColumnPropNameInTable="xepLoaiColumn" msprop:Generator_UserColumnName="xepLoai" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
