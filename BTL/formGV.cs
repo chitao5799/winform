@@ -243,18 +243,24 @@ namespace BTL
                 MessageBox.Show("Số điện thoại chỉ gồm các chữ số nguyên dương!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-        
+
+            DateTime ngaysinh = new DateTime();
             try
             {
                 string ns = tbNgaysinh.Text.Trim();
                 string[] arr = ns.Split('/');
                 string[] arrTemp = arr[2].Split(' ');
                 arr[2] = arrTemp[0];
-                new DateTime(Convert.ToInt32(arr[2]), Convert.ToInt32(arr[0]), Convert.ToInt32(arr[1]));
+                ngaysinh=new DateTime(Convert.ToInt32(arr[2]), Convert.ToInt32(arr[0]), Convert.ToInt32(arr[1]));
             }
             catch (Exception)
             {
                 MessageBox.Show("Ngày sinh của giảng viên không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if( DateTime.Now.Year-ngaysinh.Year<=22)
+            {
+                MessageBox.Show("Tuổi của giảng viên phải lớn hơn 22 tuổi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 

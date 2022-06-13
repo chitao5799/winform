@@ -210,3 +210,26 @@ from SinhVien sv,BangDiem bd,LopTinChi ltc,MonHoc mh
 where sv.maSV=bd.maSV_PK and bd.maLopTC_PK=ltc.maLopTC and ltc.maMonFK=mh.maMon
 and sv.maLopHC_FK=N'1810A01' and bd.maSV_PK=N'18A10001' and hocKy=1 and namHoc=N'2019-2020'
 
+
+select * from LopTinChi
+--lấy tên môn học theo lớp tín chỉ.
+select MonHoc.tenMon
+from LopTinChi,MonHoc
+where LopTinChi.maMonFK=MonHoc.maMon and LopTinChi.maLopTC='0001'
+
+
+
+----thi
+select maLopTC_PK,maSV_PK,tenSV,ngaySinh,YEAR(getdate())-YEAR(ngaySinh) as N'tuổi',diemChuyenCan,diemGiuaKy,diemThi,diemTBC  
+from BangDiem left join SinhVien on BangDiem.maSV_PK=SinhVien.maSV
+
+
+select ltc.*
+from LopTinChi ltc,BangDiem
+where BangDiem.maLopTC_PK=ltc.maLopTC
+group by BangDiem.maLopTC_PK,ltc.maLopTC,ltc.maKhoaFK,ltc.hocKy,ltc.maGiangVienFK,ltc.maMonFK,ltc.namHoc
+having count(BangDiem.maSV_PK)>0
+
+select maSV,tenSV,ngaySinh,gioiTinh,maLopHC_FK,diemChuyenCan,diemGiuaKy,diemThi,diemTBC,maLopTC_PK,tenMon,soTinChi,count(diemTBC)>4 as N'dat'
+from SinhVien,BangDiem,LopTinChi,MonHoc
+where maLopTC_PK=@maloptc and SinhVien.maSV=BangDiem.maSV_PK and LopTinChi.maLopTC=BangDiem.maLopTC_PK and MonHoc.maMon=LopTinChi.maMonFK

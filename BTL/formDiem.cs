@@ -79,7 +79,11 @@ namespace BTL
             using (SqlConnection cnn = new SqlConnection(constr))
             {
 
-                string query = @"select maLopTC_PK,maSV_PK,tenSV,ngaySinh,diemChuyenCan,diemGiuaKy,diemThi,diemTBC  
+                //string query = @"select maLopTC_PK,maSV_PK,tenSV,ngaySinh,diemChuyenCan,diemGiuaKy,diemThi,diemTBC  
+                //                from BangDiem left join SinhVien on BangDiem.maSV_PK=SinhVien.maSV";
+                //string query = @"select maLopTC_PK,tenSV,ngaySinh,diemChuyenCan,diemGiuaKy,diemThi,diemTBC  
+                //                from BangDiem left join SinhVien on BangDiem.maSV_PK=SinhVien.maSV";
+                string query = @"select maLopTC_PK,maSV_PK,tenSV,ngaySinh,YEAR(getdate())-YEAR(ngaySinh) as N'tuổi',diemChuyenCan,diemGiuaKy,diemThi,diemTBC  
                                 from BangDiem left join SinhVien on BangDiem.maSV_PK=SinhVien.maSV";
                 using (SqlCommand cmd = new SqlCommand(query, cnn))
                 {
@@ -95,12 +99,13 @@ namespace BTL
                         dgvDiem.Columns[0].HeaderText = "Mã Lớp";
                         dgvDiem.Columns[1].HeaderText = "Mã SV";
                         dgvDiem.Columns[2].HeaderText = "Tên Sinh Viên";
-                        dgvDiem.Columns[3].HeaderText = "Ngày sinh";       
-                        dgvDiem.Columns[4].HeaderText = "Điểm chuyên cần";
-                        dgvDiem.Columns[5].HeaderText = "Điểm giữa kỳ";
-                        dgvDiem.Columns[6].HeaderText = "Điểm thi";
-                        dgvDiem.Columns[7].HeaderText = "Điểm TB";
-
+                        dgvDiem.Columns[3].HeaderText = "Ngày sinh";
+                        dgvDiem.Columns[4].HeaderText = "Tuổi";
+                        dgvDiem.Columns[5].HeaderText = "Điểm chuyên cần";
+                        dgvDiem.Columns[6].HeaderText = "Điểm giữa kỳ";
+                        dgvDiem.Columns[7].HeaderText = "Điểm thi";
+                        dgvDiem.Columns[8].HeaderText = "Điểm TB";
+                        dgvDiem.Columns[1].Visible = false;
                         dgvDiem.ReadOnly = true;
                      
                     }
@@ -113,9 +118,8 @@ namespace BTL
             tbMaLop.ResetText();
             tbMaSV.ResetText();
             tbDiemThi.Text = "0";
-            tbDiemCC.Text ="0";
+            tbDiemCC.Text = "0";
             tbDiemGK.Text = "0";
-            
             btnSua.Enabled = false;
             btnThem.Enabled = true;
             btnXoa.Enabled = false;
@@ -174,11 +178,7 @@ namespace BTL
         //hàm kiểm tra tính đúng đắn của dữ liệu nhập vào trong các textbox.
         private bool KiemTraDuLieu()
         {
-            if (tbDiemCC.Text.Trim() == "")
-            {
-                MessageBox.Show("Điểm chuyên cần không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }        
+                   
             if (tbMaSV.Text.Trim() == "")
             {
                 MessageBox.Show("Mã sinh viên không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -189,6 +189,11 @@ namespace BTL
                 MessageBox.Show("Mã lớp không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+            if (tbDiemCC.Text.Trim() == "")
+            {
+                MessageBox.Show("Điểm chuyên cần không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            } 
             if (tbDiemGK.Text.Trim() == "")
             {
                 MessageBox.Show("Điểm giữa kỳ không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -199,7 +204,7 @@ namespace BTL
                 MessageBox.Show("Điểm thi không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
+            
             try
             {
                 double diemcc = Convert.ToDouble(tbDiemCC.Text);
@@ -520,6 +525,87 @@ namespace BTL
                         );
             }
             e.Handled = true;
+        }
+
+        private void tbMaLop_TextChanged(object sender, EventArgs e)
+        {
+            //string tim_sql = @"select MonHoc.tenMon
+            //    from LopTinChi,MonHoc
+            //    where LopTinChi.maMonFK=MonHoc.maMon and LopTinChi.maLopTC='" + tbMaLop.Text.Trim() + "'";
+            //using (SqlConnection cnn = new SqlConnection(constr))
+            //{
+            //    SqlDataAdapter sda = new SqlDataAdapter();
+            //    sda.SelectCommand = new SqlCommand(tim_sql, cnn);
+            //    DataTable tb = new DataTable();
+            //    sda.Fill(tb);
+            //    if (tb.Rows.Count > 0)
+            //        tbMonHoc.Text = tb.Rows[0]["tenMon"].ToString();
+            //    else
+            //        tbMonHoc.Text = "";
+            //    tbMonHoc.ReadOnly=true;
+            //}
+        }
+
+        private void tbDiemCC_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tbDiemCC.Text.Trim() != "") { 
+                float.Parse(tbDiemCC.Text.Trim());
+                double diemcc = Convert.ToDouble(tbDiemCC.Text.Trim());
+                if (diemcc < 0 || diemcc > 10)
+                {
+                    MessageBox.Show("Điểm chuyên cần phải lớn hơn 0 và bé hơn 10!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Không được nhập ký tự",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tbDiemGK_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tbDiemGK.Text.Trim() != "")
+                {
+                    float.Parse(tbDiemGK.Text.Trim());
+                    double diemcc = Convert.ToDouble(tbDiemGK.Text.Trim());
+                    if (diemcc < 0 || diemcc > 10)
+                    {
+                        MessageBox.Show("Điểm giữa kỳ phải lớn hơn 0 và bé hơn 10!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Không được nhập ký tự",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tbDiemThi_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tbDiemThi.Text.Trim() != "")
+                {
+                    float.Parse(tbDiemThi.Text.Trim());
+                    double diemcc = Convert.ToDouble(tbDiemThi.Text.Trim());
+                    if (diemcc < 0 || diemcc > 10)
+                    {
+                        MessageBox.Show("Điểm thi phải lớn hơn 0 và bé hơn 10!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Không được nhập ký tự",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         //private void DGV_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
         //{

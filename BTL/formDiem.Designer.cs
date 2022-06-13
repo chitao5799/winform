@@ -87,7 +87,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 19);
+            this.label5.Location = new System.Drawing.Point(14, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 17);
             this.label5.TabIndex = 2;
@@ -96,10 +96,11 @@
             // tbMaLop
             // 
             this.tbMaLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaLop.Location = new System.Drawing.Point(88, 19);
+            this.tbMaLop.Location = new System.Drawing.Point(88, 20);
             this.tbMaLop.Name = "tbMaLop";
             this.tbMaLop.Size = new System.Drawing.Size(185, 23);
             this.tbMaLop.TabIndex = 3;
+            this.tbMaLop.TextChanged += new System.EventHandler(this.tbMaLop_TextChanged);
             // 
             // panel2
             // 
@@ -128,26 +129,28 @@
             // tbDiemGK
             // 
             this.tbDiemGK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDiemGK.Location = new System.Drawing.Point(145, 141);
+            this.tbDiemGK.Location = new System.Drawing.Point(145, 143);
             this.tbDiemGK.Name = "tbDiemGK";
             this.tbDiemGK.Size = new System.Drawing.Size(128, 23);
             this.tbDiemGK.TabIndex = 36;
             this.tbDiemGK.Text = "0";
+            this.tbDiemGK.TextChanged += new System.EventHandler(this.tbDiemGK_TextChanged);
             // 
             // tbDiemThi
             // 
             this.tbDiemThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDiemThi.Location = new System.Drawing.Point(145, 180);
+            this.tbDiemThi.Location = new System.Drawing.Point(145, 182);
             this.tbDiemThi.Name = "tbDiemThi";
             this.tbDiemThi.Size = new System.Drawing.Size(128, 23);
             this.tbDiemThi.TabIndex = 35;
             this.tbDiemThi.Text = "0";
+            this.tbDiemThi.TextChanged += new System.EventHandler(this.tbDiemThi_TextChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(14, 142);
+            this.label8.Location = new System.Drawing.Point(14, 144);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 17);
             this.label8.TabIndex = 34;
@@ -157,7 +160,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(14, 184);
+            this.label7.Location = new System.Drawing.Point(14, 186);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 17);
             this.label7.TabIndex = 32;
@@ -170,7 +173,7 @@
             this.btnRefresh.Controls.Add(this.label20);
             this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRefresh.ForeColor = System.Drawing.Color.MistyRose;
-            this.btnRefresh.Location = new System.Drawing.Point(17, 242);
+            this.btnRefresh.Location = new System.Drawing.Point(17, 244);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(86, 37);
             this.btnRefresh.TabIndex = 31;
@@ -196,7 +199,7 @@
             this.btnXoa.Controls.Add(this.pictureBox3);
             this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoa.ForeColor = System.Drawing.Color.MistyRose;
-            this.btnXoa.Location = new System.Drawing.Point(137, 305);
+            this.btnXoa.Location = new System.Drawing.Point(137, 307);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(86, 37);
             this.btnXoa.TabIndex = 29;
@@ -232,7 +235,7 @@
             this.btnSua.Controls.Add(this.pictureBox2);
             this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSua.ForeColor = System.Drawing.Color.MistyRose;
-            this.btnSua.Location = new System.Drawing.Point(137, 242);
+            this.btnSua.Location = new System.Drawing.Point(137, 244);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(86, 37);
             this.btnSua.TabIndex = 28;
@@ -268,7 +271,7 @@
             this.btnThem.Controls.Add(this.pictureBox1);
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.ForeColor = System.Drawing.Color.MistyRose;
-            this.btnThem.Location = new System.Drawing.Point(17, 305);
+            this.btnThem.Location = new System.Drawing.Point(17, 307);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(86, 37);
             this.btnThem.TabIndex = 27;
@@ -300,7 +303,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(191, 323);
+            this.label12.Location = new System.Drawing.Point(191, 325);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(0, 17);
             this.label12.TabIndex = 14;
@@ -310,7 +313,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(14, 61);
+            this.label11.Location = new System.Drawing.Point(14, 63);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 17);
             this.label11.TabIndex = 12;
@@ -319,7 +322,7 @@
             // tbMaSV
             // 
             this.tbMaSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaSV.Location = new System.Drawing.Point(88, 59);
+            this.tbMaSV.Location = new System.Drawing.Point(88, 61);
             this.tbMaSV.Name = "tbMaSV";
             this.tbMaSV.Size = new System.Drawing.Size(185, 23);
             this.tbMaSV.TabIndex = 13;
@@ -328,7 +331,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(14, 101);
+            this.label9.Location = new System.Drawing.Point(14, 103);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(125, 17);
             this.label9.TabIndex = 8;
@@ -337,11 +340,12 @@
             // tbDiemCC
             // 
             this.tbDiemCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDiemCC.Location = new System.Drawing.Point(145, 98);
+            this.tbDiemCC.Location = new System.Drawing.Point(145, 100);
             this.tbDiemCC.Name = "tbDiemCC";
             this.tbDiemCC.Size = new System.Drawing.Size(128, 23);
             this.tbDiemCC.TabIndex = 9;
             this.tbDiemCC.Text = "0";
+            this.tbDiemCC.TextChanged += new System.EventHandler(this.tbDiemCC_TextChanged);
             // 
             // label6
             // 

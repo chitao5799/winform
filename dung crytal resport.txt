@@ -1,0 +1,12 @@
+* Sử dụng Stored Procedure của SQL Server làm nguồn dữ liệu cho Crystal Report
+new item -> scrytal report
+using the report wizard , standard -> ok
+create new connection > OLE DB (ADO) > microsoft ole db provider for sql servern ->next
+>sau khi chọn database thì ở side bar bên trái (available data source) tích dấu + của tên database 
+thì các tên thủ tục ở trong đó.
+
+* Sử dụng dataset làm nguồn dữ liệu cho Crystal Report
+-tạo file dataset trước
+-new item -> scrytal report
+using the report wizard , standard -> ok
+Project Data >ADO.NET DataSet > chọn dataset

@@ -21,7 +21,13 @@ namespace BTL
             Load_combo_Khoa();
             using (SqlConnection cnn = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("select * from LopTinChi", cnn))
+                // string query = "select * from LopTinChi";
+                string query = @"select ltc.*
+                   from LopTinChi ltc,BangDiem
+                    where BangDiem.maLopTC_PK = ltc.maLopTC
+                    group by BangDiem.maLopTC_PK,ltc.maLopTC,ltc.maKhoaFK,ltc.hocKy,ltc.maGiangVienFK,ltc.maMonFK,ltc.namHoc
+                    having count(BangDiem.maSV_PK) > 0";
+                using (SqlCommand cmd = new SqlCommand(query, cnn))
                 {
                     cmd.CommandType = CommandType.Text;
                     using (SqlDataAdapter ada = new SqlDataAdapter(cmd))
@@ -390,6 +396,7 @@ namespace BTL
             dsSV.Tables["DSDiemSVLopHC"].Merge(tableMain);
           
             reportDSDiem.SetDataSource(dsSV.Tables["DSDiemSVLopHC"]);
+           // reportDSDiem.RecordSelectionFormula = "{DSDiemSVLopHC.gioiTinh}='Nữ'"; //ví dụ lọc kết quả
             InBaoCao bc = new InBaoCao();
             bc.CrystalReportViewer1.ReportSource = reportDSDiem;
             bc.ShowDialog();
